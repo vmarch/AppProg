@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton imgBtnToCall;
     ImageButton imgBtnToSend;
     Button btnGoToApp;
+    Intent intent = null;
 
 
     @Override
@@ -25,21 +26,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imgBtnToSend = (ImageButton) findViewById(R.id.imgBtnSend);
         btnGoToApp = (Button) findViewById(R.id.btnApp);
 
+        imgBtnToCall.setOnClickListener(this);
+        imgBtnToSend.setOnClickListener(this);
+        btnGoToApp.setOnClickListener(this);
+    }
 
-        imgBtnToSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW).setType("vnd.android-dir/mms-sms"));
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
 
-        imgBtnToCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_DIAL));
-            }
-        });
+            case R.id.imgBtnCall:
+                intent = new Intent(Intent.ACTION_DIAL);
+                break;
 
+            case R.id.imgBtnSend:
+                intent = new Intent(Intent.ACTION_VIEW).setType("vnd.android-dir/mms-sms");
+                break;
+
+            case R.id.btnApp:
+                intent = new Intent(this, ListOfApp.class);
+                break;
+            default:
+                break;
+        }
+        startActivity(intent);
     }
 
 
@@ -60,16 +70,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnApp:
-                Intent intent = new Intent(this, ListOfApp.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
-        }
-    }
 
 }
