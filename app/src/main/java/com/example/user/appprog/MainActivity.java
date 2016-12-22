@@ -9,12 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton imgBtnToCall;
     ImageButton imgBtnToSend;
     Button btnGoToApp;
-    Intent intent = null;
 
 
     @Override
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Intent intent = null;
         switch (v.getId()) {
 
             case R.id.imgBtnCall:
@@ -46,11 +47,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnApp:
                 intent = new Intent(this, ListOfApp.class);
                 break;
-            default:
-                break;
+
         }
         startActivity(intent);
     }
+
 
 
     @Override
