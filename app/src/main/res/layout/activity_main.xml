@@ -90,7 +90,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imgBtnCall"
+            android:id="@+id/img_btn_call"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -98,7 +98,7 @@
             tools:ignore="ContentDescription" />
 
         <Button
-            android:id="@+id/btnApp"
+            android:id="@+id/btn_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -106,7 +106,7 @@
             tools:ignore="HardcodedText,InefficientWeight" />
 
         <ImageButton
-            android:id="@+id/imgBtnSend"
+            android:id="@+id/img_btn_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

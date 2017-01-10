@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgBtnToCall = (ImageButton) findViewById(R.id.imgBtnCall);
-        imgBtnToSend = (ImageButton) findViewById(R.id.imgBtnSend);
-        btnGoToApp = (Button) findViewById(R.id.btnApp);
+        imgBtnToCall = (ImageButton) findViewById(R.id.img_btn_call);
+        imgBtnToSend = (ImageButton) findViewById(R.id.img_btn_send);
+        btnGoToApp = (Button) findViewById(R.id.btn_app);
 
         imgBtnToCall.setOnClickListener(this);
         imgBtnToSend.setOnClickListener(this);
@@ -36,22 +36,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = null;
         switch (v.getId()) {
 
-            case R.id.imgBtnCall:
+            case R.id.img_btn_call:
                 intent = new Intent(Intent.ACTION_DIAL);
                 break;
 
-            case R.id.imgBtnSend:
+            case R.id.img_btn_send:
                 intent = new Intent(Intent.ACTION_VIEW).setType("vnd.android-dir/mms-sms");
                 break;
 
-            case R.id.btnApp:
-                intent = new Intent(this, ListOfApp.class);
+            case R.id.btn_app:
+                intent = new Intent(this, AppActivity.class);
                 break;
 
         }
         startActivity(intent);
     }
-
 
 
     @Override
@@ -62,14 +61,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
+
     }
-
-
 }
