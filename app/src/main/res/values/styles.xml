@@ -7,7 +7,7 @@
     </style>
 
     <style name="ButtonStyle">
-        <item name="android:text">"Data"</item>
+        <item name="android:text">"EMPTY"</item>
     </style>
 
 </resources>
