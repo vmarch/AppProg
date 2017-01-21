@@ -68,7 +68,6 @@ public class RecViewAdapter extends RecyclerView.Adapter<RecViewAdapter.ViewHold
     }
 
 
-
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 

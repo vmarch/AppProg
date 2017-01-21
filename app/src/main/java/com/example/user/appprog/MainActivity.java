@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 
 
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_app:
                 intent = new Intent(this, AppActivity.class);
                 break;
-
         }
         startActivity(intent);
     }

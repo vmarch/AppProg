@@ -82,7 +82,7 @@ public class AppActivity extends Activity {
         setLayo(R.layout.item_grid);
         layoutManager = new GridLayoutManager(this, 3);
         appRecyclerView.setLayoutManager(layoutManager);
-
+        appRecyclerView.getRecycledViewPool().clear();
     }
 
 
@@ -90,6 +90,6 @@ public class AppActivity extends Activity {
         setLayo(R.layout.item_list);
         layoutManager = new LinearLayoutManager(this);
         appRecyclerView.setLayoutManager(layoutManager);
+        appRecyclerView.getRecycledViewPool().clear();
     }
-
 }
